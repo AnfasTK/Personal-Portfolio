@@ -41,7 +41,6 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-	<script src="js/functionss.js"></script>
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -739,20 +738,23 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									<form action="https://api.web3forms.com/submit" method="POST" >
 										<input type="hidden" name="access_key" value="8bf250e7-4943-4dcb-9546-aec3694aa2d3">
 										<div class="form-group">
-											<input type="text"  name="name" class="form-control" placeholder="Name">
+											<input type="text"  name="name" class="form-control" placeholder="Name" id="contact-name" onkeyup="validateName()" required>
+											<span id="name-error"></span>
 										</div>
 										<div class="form-group">
-											<input type="email"  name="email" class="form-control" placeholder="Email">
+											<input type="email"  name="email" class="form-control" placeholder="Email" id="contact-email" onkeyup="validateEmail()" required>
+											<span id="email-error"></span>
 										</div>
 										<div class="form-group">
-											<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+											<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message" id="contact-message" onkeyup="validateMessage()" required></textarea>
+											<span id="message-error"></span>
 										</div>
 										<div class="form-group">
 											<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
+											<input onclick="return validateForm()" type="submit" class="btn btn-primary btn-send-message" value="Send Message">
+											<span id="submit-error"></span>
 										</div>
 									</form>
-									
 								</div>
 							</div>
 						</div>
@@ -777,6 +779,10 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- Counters -->
 	<script src="js/jquery.countTo.js"></script>
+
+	<script src="js/functionss.js"></script>
+
+	<script src="js/script.js"></script>
 	
 	
 	<!-- MAIN JS -->
