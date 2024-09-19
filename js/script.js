@@ -60,3 +60,6 @@ function validateForm(){
         return false;
     }
 }
+function maxload(){
+    alert("Maximum loaded")
+}
